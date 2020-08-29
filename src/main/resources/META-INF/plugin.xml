@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>pl.gmat.screengenerator</id>
-    <name>Screen Generator</name>
-    <vendor email="grzesiek.matyszczak@gmail.com">Grzegorz Matyszczak</vendor>
+    <id>com.bodiart.ModuleGenerator</id>
+    <name>Module Generator</name>
+    <vendor email="farshbgochachko@gmail.com">Hochachko Bohdan</vendor>
     <idea-version since-build="182"/>
 
     <description><![CDATA[
@@ -27,21 +27,23 @@
     <extensions defaultExtensionNs="com.intellij">
         <defaultProjectTypeProvider type="Android"/>
         <projectConfigurable
-                instance="ui.settings.SettingsViewImpl">
+                instance="com.bodiart.ui.settings.SettingsViewImpl">
         </projectConfigurable>
-        <projectService serviceInterface="data.ScreenGeneratorComponent" serviceImplementation="data.ScreenGeneratorComponent"/>
+        <projectService serviceInterface="com.bodiart.data.ScreenGeneratorComponent" serviceImplementation="com.bodiart.data.ScreenGeneratorComponent"/>
     </extensions>
 
     <actions>
         <group id="ScreenGenerator.FileMenu"
-               text="Screen"
+               text="Screen Gen"
                description="Screen Generator Plugin">
             <add-to-group group-id="NewGroup" anchor="last"/>
             <separator />
             <action id="NewScreenAction"
-                    class="ui.newscreen.NewScreenAction"
-                    text="Screen"
-                    description="Screen Generator Plugin"/>
+                    class="com.bodiart.ui.newscreen.NewScreenAction"
+                    text="Screen gen"
+                    description="Screen Generator Plugin">
+                <keyboard-shortcut first-keystroke="alt m" keymap="$default"/>
+            </action>
         </group>
     </actions>
 </idea-plugin>
